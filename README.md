@@ -123,3 +123,37 @@ A **MERN stack** web application that connects job seekers with employers using 
 ```bash
 git clone <repo-url>
 cd Subscription-Job-Portal
+
+2. Install backend dependencies
+
+cd backend
+npm install
+
+
+Install frontend dependencies
+
+cd ../frontend
+npm install
+
+
+Create a .env file in backend:
+
+PORT=5000
+MONGO_URI=<your_mongodb_uri>
+JWT_SECRET=<your_jwt_secret>
+RAZORPAY_KEY_ID=<your_razorpay_key_id>
+RAZORPAY_KEY_SECRET=<your_razorpay_key_secret>
+EMAIL_USER=<your_email>
+EMAIL_PASS=<your_email_password>
+
+
+Start backend
+
+cd backend
+npm run dev
+
+
+Start frontend
+
+cd frontend
+npm start
