@@ -1,0 +1,100 @@
+.failed-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f87171, #b91c1c); /* red gradient */
+  font-family: "Poppins", sans-serif;
+}
+
+.failed-box {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.crossmark {
+  font-size: 4rem;
+  color: #dc2626;
+  margin-bottom: 20px;
+}
+
+.failed-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #b91c1c;
+  margin-bottom: 10px;
+}
+
+.failed-text {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.transaction-details {
+  text-align: left;
+  background: #fee2e2;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 0.95rem;
+  color: #991b1b;
+}
+
+.transaction-details p {
+  margin: 5px 0;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.retry-btn {
+  padding: 12px 0;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: #ef4444;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-btn:hover {
+  background-color: #dc2626;
+}
+
+.home-btn {
+  padding: 12px 0;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: #fbbf24;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #f59e0b;
+}
+
+@media (max-width: 500px) {
+  .failed-box {
+    padding: 30px 20px;
+  }
+  .failed-title {
+    font-size: 1.5rem;
+  }
+}
