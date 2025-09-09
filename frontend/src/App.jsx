@@ -12,7 +12,7 @@ import ResetPassword from "./Pages/Auth/Reset/ResetPassword";
 import PaymentSuccess from "./Pages/Plans/Sucess/PaymentSuccess";
 import PaymentFailed from "./Pages/Plans/Fails/PaymentFailed";
 import Dashboard from "./Pages/Admin/Dashboard/Dashboard";
-import Profile from "./Pages/Auth/Profile";
+import Profile from "./Pages/Auth/Profile.jsx";
 
 
 function App() {

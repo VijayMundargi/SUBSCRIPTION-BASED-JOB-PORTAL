@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
   },
   number: {
     type: String,
-    required: [true, "Please enter your Number"],
+    required: [true, "Please enter your number"],
     unique: true,
   },
   password: {
@@ -29,30 +29,55 @@ const userSchema = new mongoose.Schema({
     enum: ["admin", "user"],
     default: "user",
   },
+
+  // ✅ Subscription Info
   subscription: {
     id: String,
     status: String,
     plan: String,
   },
+
+  // ✅ Avatar (Profile Image)
   avatar: {
-    public_id: {
-      type: String,
-    },
+    public_id: { type: String },
+    url: { type: String }, // e.g., Cloudinary URL
   },
+
+  // ✅ Resume
+  resume: {
+    public_id: { type: String },
+    url: { type: String }, // uploaded file (PDF/DOC) URL
+  },
+
+  // ✅ Job Profile
+  jobProfile: {
+    title: { type: String },          // e.g., "Full Stack Developer"
+    company: { type: String },        // optional
+    experience: { type: Number },     // in years
+    skills: [String],                 // array of skills
+  },
+
+  // ✅ Joined Date
+  joinedAt: {
+    type: Date,
+    default: Date.now,
+  },
+
   createdAt: {
     type: Date,
     default: Date.now,
   },
+
   ResetPasswordToken: String,
   ResetPasswordExpire: String,
 });
 
-// ✅ Fixed getJWTToken method
+// ✅ JWT Token Method
 userSchema.methods.getJWTToken = function () {
   return jwt.sign(
     { _id: this._id },
-    process.env.JWT_SECRET, // fixed typo
-    { expiresIn: "10d" }   // must be inside jwt.sign options
+    process.env.JWT_SECRET,
+    { expiresIn: "10d" }
   );
 };
 
