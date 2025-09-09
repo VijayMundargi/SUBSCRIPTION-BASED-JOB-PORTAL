@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter your password"],
     minLength: [6, "Password must be at least 6 characters"],
-    select: false, // ✅ hide password by default
+    select: false, 
   },
   role: {
     type: String,
@@ -30,26 +30,26 @@ const userSchema = new mongoose.Schema({
     default: "user",
   },
 
-  // ✅ Subscription Info
+  
   subscription: {
     id: String,
     status: String,
     plan: String,
   },
 
-  // ✅ Avatar (Profile Image)
+  
   avatar: {
     public_id: { type: String },
     url: { type: String }, // e.g., Cloudinary URL
   },
 
-  // ✅ Resume
+ 
   resume: {
     public_id: { type: String },
     url: { type: String }, // uploaded file (PDF/DOC) URL
   },
 
-  // ✅ Job Profile
+ 
   jobProfile: {
     title: { type: String },          // e.g., "Full Stack Developer"
     company: { type: String },        // optional
@@ -57,7 +57,7 @@ const userSchema = new mongoose.Schema({
     skills: [String],                 // array of skills
   },
 
-  // ✅ Joined Date
+ 
   joinedAt: {
     type: Date,
     default: Date.now,
@@ -72,7 +72,7 @@ const userSchema = new mongoose.Schema({
   ResetPasswordExpire: String,
 });
 
-// ✅ JWT Token Method
+
 userSchema.methods.getJWTToken = function () {
   return jwt.sign(
     { _id: this._id },

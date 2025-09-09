@@ -1,11 +1,14 @@
 const express = require("express")
-const {createJobs,getAllJob,deleteJob} = require("../controller/jobController.controller")
-
+const {createJobs,getAllJob,deleteJob,getJobById,getJobsEmployer,toggleCloseJob} = require("../controller/jobController.controller")
+const isAuthenticated = require("../middleware/auth.js")
 
 const router = express.Router()
 
-router.route("/create").post(createJobs)
-router.route("getCourse").get(getAllJob)
-router.route("delte").delete(deleteJob)
+router.route("/create").post(isAuthenticated,createJobs)
+router.route("/getJob").get(isAuthenticated,getAllJob)
+router.route("/getSingleJob/:id").get(isAuthenticated, getJobById)
+router.route("/jobsEmployer").get(isAuthenticated,getJobsEmployer)
+router.route("/toggle/:id").put(isAuthenticated, toggleCloseJob);
+router.route("/job/delete/:id").delete(isAuthenticated,deleteJob)
 
 module.exports = router;

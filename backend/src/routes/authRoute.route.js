@@ -42,7 +42,7 @@ router.post("/login", Login);
 router.get("/logout", Logout);
 router.get("/me", isAuthenticated, profile);
 
-// ====== Update Profile (with resume upload) ======
+
 router.put(
   "/me/update",
   isAuthenticated,
